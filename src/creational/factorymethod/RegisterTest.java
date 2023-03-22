@@ -4,12 +4,9 @@ public class RegisterTest {
 
     public static void main(String[] args) {
 
-        StudentFactory studentFactory = new StudentFactoryImpl();
+        BusinessStudentFactory businessStudentFactory = new BusinessStudentFactoryImpl();
 
-        Student student = studentFactory.createStudent("İrem");
-        System.out.println(student.toString());
-
-        Student businessStudent = studentFactory.createBusinessStudent("Emir", "BMW");
+        Student businessStudent = businessStudentFactory.createBusinessStudent("Emir", "BMW");
         System.out.println(businessStudent.toString());
 
         EngineeringStudentFactory engineerStudentFactory = new EngineeringStudentFactoryImpl();

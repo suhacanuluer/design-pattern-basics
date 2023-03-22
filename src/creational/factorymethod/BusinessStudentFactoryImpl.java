@@ -2,14 +2,9 @@ package creational.factorymethod;
 
 import java.time.LocalDateTime;
 
-public class StudentFactoryImpl implements StudentFactory {
+public class BusinessStudentFactoryImpl implements BusinessStudentFactory {
 
     private LocalDateTime now;
-    @Override
-    public Student createStudent(String name) {
-        now = LocalDateTime.now();
-        return new Student(name, now);
-    }
 
     @Override
     public Student createBusinessStudent(String name, String car) {

@@ -1,6 +1,5 @@
 package creational.factorymethod;
 
-public interface StudentFactory {
-    Student createStudent(String name);
+public interface BusinessStudentFactory {
     Student createBusinessStudent(String name,String car);
 }

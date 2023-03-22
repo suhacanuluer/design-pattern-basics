@@ -5,7 +5,7 @@ import lombok.ToString;
 import java.time.LocalDateTime;
 
 @ToString
-public class Student {
+public abstract class Student {
 
     private int id = 0;
     private String name;

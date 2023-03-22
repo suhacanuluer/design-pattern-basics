@@ -2,7 +2,7 @@ package creational.factorymethod;
 
 import java.time.LocalDateTime;
 
-public class EngineeringStudent extends Student {
+public abstract class EngineeringStudent extends Student {
 
     private String calculator;
 
