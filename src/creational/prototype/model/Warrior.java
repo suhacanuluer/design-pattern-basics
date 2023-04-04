@@ -9,8 +9,6 @@ public class Warrior implements Cloneable {
 
     private String color;
 
-    private Boolean hasArmor;
-
     private String weapon;
 
     private int attackPower;

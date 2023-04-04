@@ -1,43 +1,59 @@
 package creational.prototype;
 
 import creational.prototype.factory.*;
+import creational.prototype.model.Army;
 import creational.prototype.model.DivisionSpec;
-import creational.prototype.model.Warrior;
+import creational.prototype.service.ArmyService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static creational.prototype.utils.Utils.getRand;
 
+
 public class Battlefield {
     public static void main(String[] args) {
 
-        List<Warrior> blueArmy = new ArrayList<>();
-        List<Warrior> redArmy = new ArrayList<>();
+        // todo: use design pattern for armies
+        Army blueArmy = new Army("Blue");
+        Army redArmy = new Army("Red");
 
-        ArcherFactory archerFactory = new ArcherFactory();
-        HorsemanFactory horsemanFactory = new HorsemanFactory();
-        MacemanFactory macemanFactory = new MacemanFactory();
-        SpearmanFactory spearmanFactory = new SpearmanFactory();
-        SwordsmanFactory swordsmanFactory = new SwordsmanFactory();
+        List<Army> armies = new ArrayList<>();
+        armies.add(blueArmy);
+        armies.add(redArmy);
 
-        DivisionSpec archerSpec = new DivisionSpec(100, 50, 10,
+        // todo: newlemekten kurtul
+        WarriorFactory archerFactory = new ArcherFactory();
+        WarriorFactory horsemanFactory = new HorsemanFactory();
+        WarriorFactory macemanFactory = new MacemanFactory();
+        WarriorFactory spearmanFactory = new SpearmanFactory();
+        WarriorFactory swordsmanFactory = new SwordsmanFactory();
+
+        final ArmyService armyService = new ArmyService();
+
+        DivisionSpec archerSpec = DivisionSpec.createSpec(100, 50, 10,
                 5, 70, 50, getRand(7, 10));
+        armyService.addDivisionToArmy(armies, archerFactory, archerSpec);
 
-        addWarriorToArmy(archerFactory, blueArmy, archerSpec);
-        addWarriorToArmy(archerFactory, redArmy, archerSpec);
+        DivisionSpec horsemanSpec = DivisionSpec.createSpec(100, 80, 50,
+                30, 100, 70, getRand(7, 10));
+        armyService.addDivisionToArmy(armies, horsemanFactory, horsemanSpec);
+
+        DivisionSpec macemanSpec = DivisionSpec.createSpec(100, 50, 50,
+                20, 50, 30, getRand(7, 10));
+        armyService.addDivisionToArmy(armies, macemanFactory, macemanSpec);
+
+        DivisionSpec spearmanSpec = DivisionSpec.createSpec(100, 50, 30,
+                15, 70, 50, getRand(7, 10));
+        armyService.addDivisionToArmy(armies, spearmanFactory, spearmanSpec);
+
+        DivisionSpec swordsmanSpec = DivisionSpec.createSpec(100, 50, 50,
+                30, 70, 50, getRand(7, 10));
+        armyService.addDivisionToArmy(armies, swordsmanFactory, swordsmanSpec);
 
         System.out.println(blueArmy);
         System.out.println(redArmy);
 
+    }
 
-    }
-    static List<Warrior> addWarriorToArmy(WarriorFactory factory, List<Warrior> army, DivisionSpec spec) {
-        for (int i = 0; i < spec.getCount(); i++) {
-            Warrior warrior = factory.createWarrior(spec.getMaxHealth(), spec.getMinHealth(), spec.getMaxAttackPower(),
-                    spec.getMinAttackPower(), spec.getMaxArmor(), spec.getMinArmor());
-            army.add(warrior);
-        }
-        return army;
-    }
 }

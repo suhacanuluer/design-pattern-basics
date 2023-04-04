@@ -6,14 +6,15 @@ import static creational.prototype.utils.Utils.getRand;
 
 public class MacemanFactory implements WarriorFactory {
 
-    private Warrior basicMacemanPrototype = new Warrior("white", false, "mace", 1, 1, 0);
+    private final Warrior basicMacemanPrototype = new Warrior("white", "mace", 1, 1, 0);
 
     @Override
-    public Warrior createWarrior(int maxHealth, int minHealth, int maxAttackPower, int minAttackPower, int maxArmor, int minArmor) {
+    public Warrior createWarrior(int maxHealth, int minHealth, int maxAttackPower, int minAttackPower, int maxArmor, int minArmor, String color) {
         Warrior prototype = basicMacemanPrototype.clone();
         prototype.setHealth(getRand(minHealth, maxHealth));
         prototype.setAttackPower(getRand(minAttackPower, maxAttackPower));
         prototype.setArmor(getRand(minArmor, maxArmor));
+        prototype.setColor(color);
         return prototype;
     }
 }
