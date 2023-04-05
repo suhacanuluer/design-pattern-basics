@@ -1,5 +1,6 @@
 package creational.prototype.model;
 
+import creational.prototype.common.ColorEnum;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -8,10 +9,14 @@ import java.util.List;
 @Data
 public class Army {
 
-    private List<Warrior> warriors;
-    private String color;
+    private String name;
 
-    public Army(String color) {
+    private List<Warrior> warriors;
+
+    private ColorEnum color;
+
+    public Army(String name, ColorEnum color) {
+        this.name = name;
         this.warriors = new ArrayList<>();
         this.color = color;
     }
