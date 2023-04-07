@@ -1,5 +1,6 @@
 package creational.prototype.model;
 
+import creational.prototype.common.ColorEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -7,7 +8,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Warrior implements Cloneable {
 
-    private String color;
+    private ColorEnum color;
 
     private String weapon;
 
