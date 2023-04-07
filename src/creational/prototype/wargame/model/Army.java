@@ -1,12 +1,15 @@
-package creational.prototype.model;
+package creational.prototype.wargame.model;
 
-import creational.prototype.common.ColorEnum;
-import lombok.Data;
+import creational.prototype.wargame.common.ColorEnum;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+//@Data
+@Getter
+@Setter
 public class Army {
 
     private String name;

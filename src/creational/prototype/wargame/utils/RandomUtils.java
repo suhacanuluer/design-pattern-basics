@@ -1,4 +1,4 @@
-package creational.prototype.utils;
+package creational.prototype.wargame.utils;
 
 public class RandomUtils {
     public static int getRandBetweenNumbers(int min, int max) {
@@ -6,6 +6,6 @@ public class RandomUtils {
     }
 
     public static int getRandUpToNumber(int num) {
-        return (int)(Math.random() * (num - 0) + 0);
+        return (int)(Math.random() * num);
     }
 }

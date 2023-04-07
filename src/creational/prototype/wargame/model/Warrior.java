@@ -1,16 +1,19 @@
-package creational.prototype.model;
+package creational.prototype.wargame.model;
 
-import creational.prototype.common.ColorEnum;
+import creational.prototype.wargame.common.WeaponEnum;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+//@Data
+@Getter
+@Setter
 @AllArgsConstructor
 public class Warrior implements Cloneable {
 
-    private ColorEnum color;
+    private Army army;
 
-    private String weapon;
+    private WeaponEnum weapon;
 
     private int attackPower;
 
