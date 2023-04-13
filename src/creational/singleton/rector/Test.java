@@ -1,4 +1,4 @@
-package creational.singleton;
+package creational.singleton.rector;
 
 public class Test {
     public static void main(String[] args) {

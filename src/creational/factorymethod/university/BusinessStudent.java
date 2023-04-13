@@ -1,4 +1,4 @@
-package creational.factorymethod;
+package creational.factorymethod.university;
 
 import java.time.LocalDateTime;
 

@@ -1,6 +1,6 @@
 package creational.abstractfactory.university;
 
-import creational.factorymethod.Student;
+import creational.factorymethod.university.Student;
 
 public interface UniversityFactory {
     Rector createRector(String name);

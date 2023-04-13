@@ -1,9 +1,9 @@
 package creational.abstractfactory.university;
 
-import creational.factorymethod.BusinessStudent;
-import creational.factorymethod.ComputerEngineeringStudent;
-import creational.factorymethod.ElectricalEngineeringStudent;
-import creational.factorymethod.Student;
+import creational.factorymethod.university.BusinessStudent;
+import creational.factorymethod.university.ComputerEngineeringStudent;
+import creational.factorymethod.university.ElectricalEngineeringStudent;
+import creational.factorymethod.university.Student;
 
 import java.time.LocalDateTime;
 

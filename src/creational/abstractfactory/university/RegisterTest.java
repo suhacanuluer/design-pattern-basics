@@ -1,6 +1,6 @@
 package creational.abstractfactory.university;
 
-import creational.factorymethod.Student;
+import creational.factorymethod.university.Student;
 
 public class RegisterTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package creational.singleton;
+package creational.singleton.rector;
 
 public enum RectorEnum implements RectorService{
     INSTANCE;
