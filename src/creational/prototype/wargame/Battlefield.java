@@ -1,17 +1,13 @@
-package creational.prototype;
+package creational.prototype.wargame;
 
-import creational.prototype.common.ColorEnum;
-import creational.prototype.factory.*;
-import creational.prototype.model.Army;
-import creational.prototype.model.DivisionSpec;
-import creational.prototype.model.Warrior;
-import creational.prototype.service.ArmyService;
-import creational.prototype.service.WarService;
+import creational.prototype.wargame.common.ColorEnum;
+import creational.prototype.wargame.factory.*;
+import creational.prototype.wargame.model.Army;
+import creational.prototype.wargame.model.DivisionSpec;
+import creational.prototype.wargame.service.ArmyService;
+import creational.prototype.wargame.service.WarService;
 
-import java.util.List;
-
-import static creational.prototype.utils.RandomUtils.getRandBetweenNumbers;
-import static creational.prototype.utils.RandomUtils.getRandUpToNumber;
+import static creational.prototype.wargame.utils.RandomUtils.getRandBetweenNumbers;
 
 public class Battlefield {
     public static void main(String[] args) {
@@ -31,13 +27,13 @@ public class Battlefield {
         final ArmyService armyService = new ArmyService();
         final WarService warService = new WarService();
 
-        DivisionSpec archerSpec = DivisionSpec.createSpec(100, 50, 10,
+        DivisionSpec archerSpec = DivisionSpec.createSpec(100, 50, 30,
                 5, 70, 50, getRandBetweenNumbers(7, 10));
         armyService.addDivisionToArmy(blueArmy, archerFactory, archerSpec);
         armyService.addDivisionToArmy(redArmy, archerFactory, archerSpec);
 
         DivisionSpec horsemanSpec = DivisionSpec.createSpec(100, 80, 50,
-                30, 100, 70, getRandBetweenNumbers(7, 10));
+                30, 90, 70, getRandBetweenNumbers(7, 10));
         armyService.addDivisionToArmy(blueArmy, horsemanFactory, horsemanSpec);
         armyService.addDivisionToArmy(redArmy, archerFactory, archerSpec);
 
@@ -56,7 +52,10 @@ public class Battlefield {
         armyService.addDivisionToArmy(blueArmy, swordsmanFactory, swordsmanSpec);
         armyService.addDivisionToArmy(redArmy, archerFactory, archerSpec);
 
-        System.out.println(blueArmy);
-        System.out.println(redArmy);
+//        System.out.println(blueArmy);
+//        System.out.println(redArmy);
+
+        warService.warWithArmies(blueArmy, redArmy);
+
     }
 }

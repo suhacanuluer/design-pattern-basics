@@ -1,8 +1,11 @@
-package creational.prototype.model;
+package creational.prototype.wargame.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+//@Data
+@Getter
+@Setter
 public class DivisionSpec {
 
         private int maxHealth;
